@@ -19,14 +19,6 @@ Interface Administrativa: Páginas dinâmicas para visualizar e interagir com os
 🏗️ Arquitetura
 O projeto utiliza uma arquitetura desacoplada, onde o frontend (renderizado no servidor) e o backend (API de negócio) são aplicações distintas.
 
-┌─────────────┐     ┌──────────────────────────────────┐      ┌─────────────────────────┐
-│             │     │      Backend-for-Frontend (BFF)    │      │                         │
-│  Navegador  │<───>│         (Este Projeto)             │<────>│  Backend Principal      │
-│   (Client)  │     │  - Express.js                      │      │   (API REST)            │
-│             │     │  - Renderização com EJS            │      │  - Lógica de Negócio    │
-└─────────────┘     │  - Gerencia Sessões                │      │  - Acesso ao Banco de Dados │
-                    │  - Atua como Proxy para o Backend  │      │                         │
-                    └──────────────────────────────────┘      └─────────────────────────┘
 🛠️ Tecnologias Utilizadas
 Backend-for-Frontend (BFF) - Pasta frontend
 Node.js: Ambiente de execução JavaScript.
