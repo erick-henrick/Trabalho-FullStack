@@ -1,136 +1,70 @@
-Sistema de Gestão de Petshop
-Este é um projeto Fullstack para um sistema de gestão de petshop, permitindo o gerenciamento de tutores, pets, serviços e solicitações de agendamento. A arquitetura é baseada em um Backend-for-Frontend (BFF) que renderiza as páginas e consome uma API REST principal para as regras de negócio e acesso ao banco de dados.
+# Portfólio — Trabalho FullStack
 
-✨ Funcionalidades Principais
-Autenticação de Usuários: Sistema de login com sessões e autenticação baseada em Token JWT para comunicação com o backend.
+Projeto convertido para servir como portfólio pessoal. Este repositório contém uma aplicação web construída com Node.js + EJS (templates), JavaScript e CSS, criada originalmente como trabalho da disciplina de FullStack na faculdade Nova Roma.
 
-Gestão de Tutores: CRUD (Criar, Ler, Atualizar, Deletar) de tutores de pets.
+## Visão geral
+Uma aplicação simples para exibir informações pessoais, projetos e contato. Ideal para personalizar com seu nome, bio, lista de projetos e links (GitHub, LinkedIn, etc.).
 
-Gestão de Pets: CRUD de pets, associados aos seus respectivos tutores.
+## Tecnologias
+- Node.js
+- EJS (templates)
+- JavaScript (client & server)
+- CSS
+- HTML
 
-Gestão de Serviços: CRUD de serviços oferecidos pelo petshop, incluindo nome e preço.
+(Conforme a composição do repositório: EJS ~48%, JavaScript ~44%.)
 
-Gestão de Produtos: CRUD de produtos.
+## Estrutura sugerida do projeto
+- /views — templates EJS (páginas, partials like header/footer)
+- /public — arquivos estáticos (CSS, imagens, JS do cliente)
+- /routes — rotas Express (se existir)
+- server.js / app.js — ponto de entrada da aplicação
+- package.json — scripts e dependências
 
-Gestão de Solicitações: Funcionalidade principal para agendar serviços para um ou mais pets de um tutor, com data, hora e status (Agendado, Em Andamento, Concluído, Cancelado).
+A estrutura exata pode variar; personalize conforme seu código.
 
-Interface Administrativa: Páginas dinâmicas para visualizar e interagir com os dados em tabelas, formulários e modais.
+## Como usar localmente
 
-🏗️ Arquitetura
-O projeto utiliza uma arquitetura desacoplada, onde o frontend (renderizado no servidor) e o backend (API de negócio) são aplicações distintas.
+1. Clone o repositório
+   git clone https://github.com/erick-henrick/Trabalho-FullStack.git
+2. Entre na pasta do projeto
+   cd Trabalho-FullStack
+3. Instale dependências
+   npm install
+4. Execute a aplicação
+   - Para produção (se existir script):
+     npm start
+   - Para desenvolvimento com reinício automático (se houver nodemon):
+     npm run dev
 
-🛠️ Tecnologias Utilizadas
-Backend-for-Frontend (BFF) - Pasta frontend
-Node.js: Ambiente de execução JavaScript.
+5. Abra no navegador
+   Acesse http://localhost:3000 (ou a porta configurada em PORT)
 
-Express.js: Framework web para criar o servidor e as rotas.
+Observação: se sua aplicação usa outro arquivo de entrada ou script, ajuste os comandos acima conforme o package.json do projeto.
 
-EJS (Embedded JavaScript): Template engine para renderizar as páginas HTML dinamicamente.
+## Como personalizar para seu portfólio
+- Substitua o texto de apresentação (nome, bio) nos arquivos em /views (por exemplo, views/index.ejs ou views/partials/header.ejs).
+- Atualize a seção de projetos: adicione cards com título, descrição, tecnologias, imagem e link para repo/demonstração.
+- Ajuste estilos em /public/css para combinar com sua identidade visual.
+- Adicione uma rota/endpoint para exibir detalhes de cada projeto, se desejar.
 
-express-session: Para gerenciamento de sessões de usuário.
+## Deploy (sugestões rápidas)
+- Vercel: ideal para front-ends; para apps Node/Express prefira uma configuração de serverless ou usar uma plataforma que suporte Node.
+- Render / Heroku: suportam Node.js facilmente. Configure variável PORT e faça o deploy a partir do repositório GitHub.
+- GitHub Pages: apenas para front-ends estáticos (é necessário gerar um build estático se você transformar as views em HTML estático).
 
-node-fetch: Para fazer requisições HTTP do BFF para o Backend Principal.
+## Boas práticas para um portfólio
+- Inclua uma seção "Sobre" com uma foto profissional e uma curta biografia.
+- Mostre 4–8 projetos relevantes com links para o código e, quando possível, a demo ao vivo.
+- Destaque tecnologias usadas e seu papel em cada projeto.
+- Mantenha o design limpo e responsivo (mobile-first).
 
-dotenv: Para gerenciar variáveis de ambiente.
+## Contribuição
+Se alguém quiser contribuir, abra uma issue ou um pull request descrevendo as mudanças propostas.
 
-Nodemon: Para reiniciar o servidor automaticamente durante o desenvolvimento.
+## Licença
+Escolha uma licença (por exemplo, MIT) e adicione um arquivo LICENSE se desejar permitir reuso.
 
-Frontend (Client-Side)
-Materialize CSS: Framework de CSS para estilização e componentes (formulários, modais, tabela).
-
-IMask.js: Biblioteca para criar máscaras de input (ex: data e hora).
-
-JavaScript (Vanilla): Para interatividade da página, como chamadas fetch para o BFF, manipulação do DOM e eventos.
-
-Backend Principal (API)
-Tecnologia não especificada, pode ser qualquer framework que exponha uma API REST, como Node.js/Express, Spring Boot, Django, etc.
-
-Autenticação: JWT (JSON Web Tokens).
-
-Banco de Dados
-Qualquer banco de dados relacional (PostgreSQL, MySQL) ou não-relacional (MongoDB) suportado pelo Backend Principal.
-
-🚀 Como Iniciar o Projeto
-Siga os passos abaixo para configurar e rodar a aplicação em seu ambiente local.
-
-Pré-requisitos
-Node.js (versão 16 ou superior)
-
-NPM ou Yarn
-
-Git
-
-Instalação
-Clone o repositório:
-
-Bash
-
-git clone https://URL_DO_SEU_REPOSITORIO.git
-cd nome-da-pasta-do-projeto
-Configure as Variáveis de Ambiente:
-Este projeto (o BFF) precisa de um arquivo .env na raiz da pasta frontend. Crie um arquivo chamado .env e adicione as seguintes variáveis:
-
-Ini, TOML
-
-# .env
-
-# URL base da sua API do Backend Principal
-BACK_URL=http://localhost:8080/api
-
-# Segredo para a sessão do Express (use uma string longa e aleatória)
-SESSION_SECRET=meu_segredo_super_secreto_para_a_sessao
-
-# Porta em que o BFF irá rodar
-PORT=3000
-No seu app.js, ajuste a linha da sessão para usar process.env.SESSION_SECRET em vez de process.env.TOKEN.
-
-Instale as dependências do Backend-for-Frontend:
-
-Bash
-
-cd frontend  # Navegue para a pasta do BFF
-npm install
-Instale as dependências do Backend Principal:
-Siga as instruções específicas do seu outro projeto de backend para instalá-lo.
-
-Executando a Aplicação
-Para que tudo funcione, você precisa rodar os dois servidores (o Backend Principal e o BFF).
-
-Inicie o Backend Principal:
-No terminal do seu projeto de backend, inicie o servidor (o comando pode variar).
-
-Bash
-
-# Exemplo:
-npm start
-Certifique-se de que ele esteja rodando na URL especificada em BACK_URL (ex: http://localhost:8080).
-
-Inicie o Backend-for-Frontend (este projeto):
-No terminal da pasta frontend deste projeto, execute:
-
-Bash
-
-# Para desenvolvimento (reinicia automaticamente com nodemon)
-npm run dev
-
-# Ou para produção
-npm start
-Certifique-se de que seu package.json tem esses scripts definidos.
-
-Acesse a aplicação:
-Abra seu navegador e acesse http://localhost:3000 (ou a porta que você definiu).
-
-📄 Endpoints do BFF (Backend-for-Frontend)
-A seguir, uma visão geral das principais rotas definidas em /routes/solicitations.js.
-
-GET /solicitations: Renderiza a página principal de gestão de solicitações, buscando todos os dados necessários (solicitações, tutores, serviços).
-
-POST /solicitations: Recebe os dados do formulário de nova solicitação, faz o proxy e envia para o endpoint POST do backend principal.
-
-GET /solicitations/fetch-pets-for-tutor/:tutorId: Rota auxiliar para popular o seletor de pets dinamicamente.
-
-GET /solicitations/:id: Busca os dados de uma solicitação específica para preencher o formulário de edição.
-
-PUT /solicitations/:id: Recebe os dados do formulário de edição e os envia para o endpoint PUT do backend principal.
-
-DELETE /solicitations/:id: Recebe uma requisição de exclusão e a envia para o endpoint DELETE do backend principal.
+## Contato
+Seu Nome — erickhenrick629@gmail.com 
+Link: https://github.com/erick-henrick
