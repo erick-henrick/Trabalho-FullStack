@@ -66,5 +66,5 @@ Se alguém quiser contribuir, abra uma issue ou um pull request descrevendo as m
 Escolha uma licença (por exemplo, MIT) e adicione um arquivo LICENSE se desejar permitir reuso.
 
 ## Contato
-Seu Nome — seu.email@exemplo.com  
-Link: https://github.com/seu-usuario — https://www.linkedin.com/in/seu-perfil
+Seu Nome — erickhenrick629@gmail.com 
+Link: https://github.com/erick-henrick
