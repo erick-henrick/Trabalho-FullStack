@@ -9,7 +9,6 @@ Projeto convertido para servir como portfólio pessoal. Este repositório conté
 - CSS
 - HTML
 
-(Conforme a composição do repositório: EJS ~48%, JavaScript ~44%.)
 
 ## Estrutura sugerida do projeto
 - /views — templates EJS (páginas, partials like header/footer)
@@ -18,7 +17,6 @@ Projeto convertido para servir como portfólio pessoal. Este repositório conté
 - server.js / app.js — ponto de entrada da aplicação
 - package.json — scripts e dependências
 
-A estrutura exata pode variar; personalize conforme seu código.
 
 ## Como usar localmente
 
